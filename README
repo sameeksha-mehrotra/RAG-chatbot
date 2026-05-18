@@ -1,0 +1,15 @@
+## RAG Document Chatbot
+A retrieval-augmented generation (RAG) chatbot that answers questions over any PDF document.
+
+## Tech stack
+- LangChain — RAG pipeline orchestration
+- Hugging Face (Llama 3.1 + all-MiniLM-L6-v2) — LLM and embeddings
+- Pinecone — vector database for semantic search
+- Streamlit — chat interface
+
+## How it works
+1. PDF is chunked into 500-token segments
+2. Chunks are embedded using sentence-transformers
+3. Embeddings stored in Pinecone vector database
+4. User query retrieved against top 3 relevant chunks
+5. Context + query sent to Llama 3.1 to generate grounded answer

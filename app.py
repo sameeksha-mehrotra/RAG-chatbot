@@ -73,7 +73,7 @@ Answer:""")
     return chain
 
 # UI
-st.title("RAG Document Chatbot")
+st.title("RAG Document Chatbot for LLMs in Finance")
 st.caption("Ask questions about your document. For example: 'What are the main points?' or 'Summarize the document.'")
 
 chain = load_chain()

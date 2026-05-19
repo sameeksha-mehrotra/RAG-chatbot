@@ -13,3 +13,6 @@ A retrieval-augmented generation (RAG) chatbot that answers questions over any P
 3. Embeddings stored in Pinecone vector database
 4. User query retrieved against top 3 relevant chunks
 5. Context + query sent to Llama 3.1 to generate grounded answer
+
+##Live Deployment
+Link to see it live: https://sameekshas-rag-chatbot.streamlit.app/

@@ -74,7 +74,7 @@ Answer:""")
 
 # UI
 st.title("RAG Document Chatbot")
-st.caption("Ask questions about your document")
+st.caption("Ask questions about your document. For example: 'What are the main points?' or 'Summarize the document.'")
 
 chain = load_chain()
 

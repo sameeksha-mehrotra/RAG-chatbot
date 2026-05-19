@@ -94,3 +94,17 @@ if user_input := st.chat_input("Ask a question about your document..."):
             answer = chain.invoke(user_input)
         st.markdown(answer)
     st.session_state.messages.append({"role": "assistant", "content": answer})
+
+with st.sidebar:
+    st.image("/Users/sameekshamehrotra/Downloads/Untitled design (1).png", width=80)
+    st.markdown("### About this app")
+    st.markdown("""
+    This RAG chatbot answers questions over enterprise documents using:
+    - **LangChain** — pipeline orchestration
+    - **Hugging Face** — Llama 3.1 LLM + embeddings
+    - **Pinecone** — vector database
+    - **Streamlit** — web interface
+    """)
+    st.divider()
+    st.markdown("Built by Sameeksha Mehrotra")
+    st.markdown("[GitHub](https://github.com/sameeksha-mehrotra/rag-chatbot)")

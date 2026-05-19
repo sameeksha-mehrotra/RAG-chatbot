@@ -96,7 +96,6 @@ if user_input := st.chat_input("Ask a question about your document..."):
     st.session_state.messages.append({"role": "assistant", "content": answer})
 
 with st.sidebar:
-    st.image("/Users/sameekshamehrotra/Downloads/Untitled design (1).png", width=80)
     st.markdown("### About this app")
     st.markdown("""
     This RAG chatbot answers questions over enterprise documents using:

@@ -34,12 +34,22 @@ class HFInferenceLLM(LLM):
             "reasoning_effort": "low"
         }
         url = "https://api.groq.com/openai/v1/chat/completions"
+        response = None
         for attempt in range(6):
-            response = requests.post(url, headers=headers, json=payload)
-            if response.status_code == 429:  # rate limited: wait, then retry
+            try:
+                response = requests.post(url, headers=headers, json=payload, timeout=60)
+            except requests.exceptions.RequestException:  # dropped connection, timeout, SSL glitch
+                time.sleep(5)
+                continue
+            if response.status_code == 429:  # rate limited
                 time.sleep(10)
                 continue
             break
+        if response is None:
+            return "API Error: connection failed after 6 attempts"
+        if response.status_code != 200:
+            return f"API Error: {response.text}"
+        return response.json()["choices"][0]["message"]["content"]
         if response.status_code != 200:
             return f"API Error: {response.text}"
         return response.json()["choices"][0]["message"]["content"]

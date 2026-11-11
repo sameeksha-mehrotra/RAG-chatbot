@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 import requests
+import time
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_pinecone import PineconeVectorStore
 from langchain_core.prompts import PromptTemplate
@@ -28,16 +29,20 @@ class HFInferenceLLM(LLM):
         payload = {
             "model": "openai/gpt-oss-20b",
             "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 512,
-            "temperature": 0.3
+            "max_tokens": 1024,
+            "temperature": 0.3,
+            "reasoning_effort": "low"
         }
         url = "https://api.groq.com/openai/v1/chat/completions"
-        response = requests.post(url, headers=headers, json=payload)
-        print("Status code:", response.status_code)
+        for attempt in range(6):
+            response = requests.post(url, headers=headers, json=payload)
+            if response.status_code == 429:  # rate limited: wait, then retry
+                time.sleep(10)
+                continue
+            break
         if response.status_code != 200:
             return f"API Error: {response.text}"
-        result = response.json()
-        return result["choices"][0]["message"]["content"]
+        return response.json()["choices"][0]["message"]["content"]
 
 # Load embeddings
 embeddings = HuggingFaceEmbeddings(

@@ -1,115 +1,51 @@
 #,type,question,bot_answer,retrieved_pages,expected_pages,right_page_retrieved,latency_s
-1,Lookup,What topic modeling method does the paper use to categorize research?,The paper uses **BERTopic** as its topic‑modeling method to categorize the research.,"2, 3, 4, 5, 6",1,False,1.18
-2,Lookup,How many papers did the authors retrieve for their dataset?,The authors retrieved a total of **90 papers** for their dataset.,"3, 4, 7",4,True,0.44
-3,Lookup,What years were the reviewed papers published between?,The reviewed papers were published between **2018 and 2024**.,"3, 4, 6, 16",4,True,0.58
-4,Lookup,Which database did the authors use to find papers?,The authors used **Google Scholar** to locate the papers.,"3, 4, 10",4,True,1.77
-5,Lookup,What two search phrases did the authors use?,"The authors used the following two search phrases:
-
-1. **“generative AI and finance”**  
-2. **“large language models and finance”**","1, 4, 7, 16, 18",4,True,0.45
-6,Lookup,What framework was used to turn each abstract into a vector embedding?,The abstracts were converted into vector embeddings using the **Sentence‑BERT (SBERT)** framework.,"5, 7, 16",5,True,0.5
-7,Lookup,Which dimension reduction technique did the BERTopic setup use?,The BERTopic setup used **UMAP (Uniform Manifold Approximation and Projection)** as its dimension‑reduction technique.,"5, 6, 8, 16",5,True,0.55
-8,Lookup,"Which clustering algorithm was used, and what is its benefit here?","The clustering algorithm employed in the study is **HDBSCAN** (Hierarchical Density‑Based Spatial Clustering of Applications with Noise).  
-
-**Benefit in this context**
-
-- **Automatic determination of the number of clusters**: HDBSCAN does not require the user to specify how many clusters to form in advance, which is useful when the natural grouping of topics is unknown.  
-- **Robustness to varying cluster densities**: It can identify clusters of different sizes and densities, which is common in text data where some topics may be more tightly knit than others.  
-- **Noise handling**: Points that do not belong to any dense region are labeled as outliers, helping to clean the topic representation.  
-- **Hierarchical output**: The algorithm produces a hierarchy (dendrogram) that can be visualized (as in Figure 4), aiding interpretation of relationships among the identified topics.","5, 7, 8, 16",5,True,0.72
-9,Lookup,"Who introduced the GAN model, and in what year?",The GAN (Generative Adversarial Network) model was introduced by Ian Goodfellow and colleagues in **2014**.,"2, 7, 12, 15",2,True,0.62
-10,Lookup,"Who developed the VAE algorithm, and when?",The VAE (Variational Auto‑Encoder) algorithm was developed by **Diederik P. Kingma and Max Welling** in **2013**.,"1, 2, 8, 12, 15, 17",2,True,0.34
-11,Lookup,What is FinVis-GPT?,"FinVis‑GPT is a multimodal large language model that was specifically built to read and interpret financial charts. It combines textual, numerical and visual data so that it can understand and analyze chart information, providing a more holistic view of financial data for tasks such as analysis, prediction and decision‑making.","3, 6, 9, 11, 17",9,True,10.7
-12,Lookup,What is FinanceBench used for?,FinanceBench is a benchmark designed to assess the performance of large language models (LLMs) on open‑book financial question‑answering tasks. It evaluates how well LLMs can retrieve and use financial knowledge to answer questions that require consulting external financial information.,"4, 8, 9, 10",10,True,0.61
-13,Lookup,What three stages did Roychowdhury propose for hallucination-minimized LLM solutions?,"The three stages proposed by Roychowdhury are:
-
-1. **Prototyping** – Developing initial, low‑scale prototypes of the hallucination‑minimized LLM solution.  
-2. **Scaling** – Expanding the prototype to larger, production‑ready deployments.  
-3. **LLM Evolution Using Feedback** – Continuously refining and evolving the model based on user and system feedback to further reduce hallucinations.","10, 12, 18",10,True,0.47
-14,Lookup,"Which journal published this paper, and on what date?","I’m sorry, but the provided context does not contain information about the journal that published the paper or its publication date.","4, 6, 16",1,False,10.8
-15,Lookup,What three focus areas for synthetic financial data did Assefa et al. highlight?,"I’m sorry, but I don’t have that information in the provided context.","7, 11, 13",11,True,10.75
-16,Cross-section,"How many papers fell into each BERTopic cluster, and what does each cluster represent?","I’m sorry, but the provided context does not include the number of papers that fell into each BERTopic cluster, nor does it give a detailed description of what each cluster represents beyond the cluster labels and a brief list of representative words. If you have additional data or a table that lists the paper counts per cluster, I can help interpret it.","5, 6, 7, 8","5, 7",True,0.61
+1,Lookup,What topic modeling method does the paper use to categorize research?,The paper uses **BERTopic** as its topic‑modeling method to categorize the research.,"2, 3, 4, 5, 6",1,False,0.75
+2,Lookup,How many papers did the authors retrieve for their dataset?,90,"3, 4, 7",4,True,0.51
+3,Lookup,What years were the reviewed papers published between?,2018 and 2024,"3, 4, 6, 16",4,True,0.62
+4,Lookup,Which database did the authors use to find papers?,Google Scholar.,"3, 4, 10",4,True,0.51
+5,Lookup,What two search phrases did the authors use?,“generative AI and finance” and “large language models and finance.”,"1, 4, 7, 16, 18",4,True,0.58
+6,Lookup,What framework was used to turn each abstract into a vector embedding?,Sentence‑BERT (SBERT) framework.,"5, 7, 16",5,True,0.58
+7,Lookup,Which dimension reduction technique did the BERTopic setup use?,UMAP (Uniform Manifold Approximation and Projection),"5, 6, 8, 16",5,True,0.44
+8,Lookup,"Which clustering algorithm was used, and what is its benefit here?","The clustering algorithm used is **HDBSCAN** (Hierarchical Density‑Based Spatial Clustering of Applications with Noise).  
+Its benefit in this context is that it can discover clusters of varying density and automatically determine the hierarchy of topics, which is particularly useful for extracting coherent, well‑separated topics from the BERTopic analysis.","5, 7, 8, 16",5,True,0.57
+9,Lookup,"Who introduced the GAN model, and in what year?",Goodfellow et al. introduced the GAN model in 2014.,"2, 7, 12, 15",2,True,0.49
+10,Lookup,"Who developed the VAE algorithm, and when?","Kingma and Welling, 2013.","1, 2, 8, 12, 15, 17",2,True,0.54
+11,Lookup,What is FinVis-GPT?,"FinVis‑GPT is a multimodal large language model that was introduced to interpret financial charts, providing a pioneering approach to visual‑financial data analysis.","3, 6, 9, 11, 17",9,True,10.67
+12,Lookup,What is FinanceBench used for?,FinanceBench is used for assessing LLMs’ performance on open‑book financial question answering (QA).,"4, 8, 9, 10",10,True,0.62
+13,Lookup,What three stages did Roychowdhury propose for hallucination-minimized LLM solutions?,"Prototyping, scaling, and LLM evolution using feedback.","10, 12, 18",10,True,10.7
+14,Lookup,"Which journal published this paper, and on what date?",I don't know.,"4, 6, 16",1,False,0.61
+15,Lookup,What three focus areas for synthetic financial data did Assefa et al. highlight?,I don't know.,"7, 11, 13",11,True,10.76
+16,Cross-section,"How many papers fell into each BERTopic cluster, and what does each cluster represent?",I don't know.,"5, 6, 7, 8","5, 7",True,0.64
 17,Cross-section,"What methods for reducing hallucination does the paper mention, and how does hallucination show up in its future research agenda?","**Methods for reducing hallucination mentioned in the paper**
 
-| Method | How it is described in the paper |
-|--------|----------------------------------|
-| **Few‑shot learning** | Kang & Liu evaluate few‑shot prompting as a way to curb hallucinations in financial LLMs. |
-| **Retrieval‑augmentation generation** | The same study tests a retrieval‑augmented generation approach, feeding the model external, verified data to keep outputs grounded. |
-| **Prototyping** | Roychowdhury outlines a three‑stage design process; the first stage is prototyping, where the system is iteratively tested and refined to reduce hallucinations. |
-| **Scaling** | In the second stage, the prototype is scaled up while maintaining safeguards that limit hallucination. |
-| **LLM evolution using feedback** | The final stage involves continuous feedback loops that fine‑tune the model, further minimizing hallucinated content. |
+1. **Few‑shot learning** – training the model with a small number of example inputs to guide its responses.  
+2. **Retrieval‑augmentation generation** – augmenting the model’s generation process with retrieved, relevant documents or data to ground its outputs.
 
-**How hallucination appears in the future research agenda**
+**How hallucination shows up in the paper’s future research agenda**
 
-The paper stresses that future work must **prioritize strategies that actively mitigate hallucination**, especially in the financial domain where accuracy is critical. It calls for:
+The paper stresses that future research must **prioritize strategies aimed at mitigating hallucination** in generative AI models, especially within the financial domain where accuracy is critical. This involves developing and refining methods (such as the ones listed above) to ensure that GAI chatbots, autonomous reports, and alerts remain reliable and high‑quality for decision‑makers.","10, 12, 18","10, 14",True,10.72
+18,Cross-section,"Why do the authors prefer BERTopic over LDA/NMF, and how does that tie to their critique of earlier financial text mining?","The authors prefer BERTopic because it goes beyond the bag‑of‑words representation that underlies traditional methods such as LDA and NMF.  By using embeddings and c‑TF‑IDF, BERTopic captures semantic relationships and contextual information that LDA/NMF discard, leading to more accurate and meaningful topic extraction.  This preference directly addresses their critique of earlier financial text‑mining work, which relied on bag‑of‑words approaches that ignored word semantics and paragraph context, thereby limiting the quality of document representation.","1, 2, 3, 5, 7, 10","3, 5",True,0.63
+19,Cross-section,"Which generative models are used for synthetic financial data, and which is most common?","The generative models mentioned for synthetic financial data are **GANs (Generative Adversarial Networks)**, **VAEs (Variational Auto‑Encoders)**, and **diffusion models**.  
+The most common one is **GANs**.","7, 12, 15, 19","7, 12",True,10.48
+20,Cross-section,How does the paper connect synthetic data to benchmarking finance LLMs?,"The paper argues that synthetic data can be used to create realistic, privacy‑preserving datasets that serve as a testbed for evaluating and benchmarking finance‑specific LLMs. By generating synthetic price series, market behaviors, and other financial documents with techniques such as GANs, VAEs, and diffusion models, researchers can safely and extensively test LLM performance on tasks like interpretation, automation, and forecasting, thereby providing a robust benchmark for finance‑oriented language models.","6, 7, 8, 11, 14","10, 14",True,10.8
+21,Cross-section,"Which two clusters are most similar in the dendrogram, and what topics are they?",I don't know.,"5, 6, 7, 8, 16","5, 8",True,0.76
+22,Cross-section,Give examples of general-purpose vs. finance-specific LLMs and explain how they differ.,"**Examples**
 
-1. **Systematic evaluation of mitigation techniques** (e.g., few‑shot, retrieval‑augmentation) across a broader set of financial tasks.  
-2. **Development of feedback‑driven evolution pipelines** that continuously monitor and correct hallucinated outputs.  
-3. **Design of domain‑specific protocols** (prototyping, scaling) that embed hallucination‑minimization from the outset.  
-4. **Ethical and social impact studies** to understand how hallucinations affect decision‑making and to guide responsible deployment.
+| Category | LLMs mentioned |
+|----------|----------------|
+| **General‑purpose** | GPT‑4, Gemini |
+| **Finance‑specific** | FinGPT, FinPT, BloombergGPT |
 
-In short, the future research agenda frames hallucination as a central risk that must be addressed through targeted mitigation methods and ongoing, feedback‑based refinement of generative AI systems.","10, 12, 18","10, 14",True,0.95
-18,Cross-section,"Why do the authors prefer BERTopic over LDA/NMF, and how does that tie to their critique of earlier financial text mining?","The authors prefer **BERTopic** because it overcomes the key limitations of the older, bag‑of‑words based methods (LDA and NMF) that have been used in most prior financial text‑mining studies.  
+**How they differ**
 
-1. **Semantic awareness** – LDA and NMF treat documents as simple mixtures of words, ignoring word order and the contextual meaning that is crucial in finance (e.g., “risk” vs. “risk‑free”). BERTopic, built on transformer embeddings, captures the semantic relationships between words and phrases, so topics are more coherent and meaningful.
-
-2. **Dynamic topic representation** – LDA and NMF produce static topic‑word distributions that can be hard to interpret and may merge distinct concepts. BERTopic uses c‑TF‑IDF and clustering on contextual embeddings, allowing it to separate subtle sub‑topics and to update topics as new papers arrive.
-
-3. **Better handling of short or noisy abstracts** – Financial abstracts are often brief and contain domain‑specific jargon. Bag‑of‑words models lose this nuance, whereas BERTopic’s embeddings preserve it, leading to higher‑quality topic extraction.
-
-4. **Scalability and automation** – Manual review of hundreds of finance‑GAI papers is labor‑intensive. BERTopic automates the entire pipeline (embedding, clustering, labeling), making systematic reviews feasible and reproducible.
-
-By choosing BERTopic, the authors directly address the critique that earlier financial text‑mining work relied on simplistic statistical models that “disregard the semantic relationship among words or lose the context information in a paragraph,” thereby producing less reliable topic structures. The advanced technique thus provides a more robust, interpretable, and scalable framework for mapping the emerging intersection of generative AI and finance.","1, 2, 3, 5, 7, 10","3, 5",True,11.61
-19,Cross-section,"Which generative models are used for synthetic financial data, and which is most common?","The generative models that have been applied to synthetic financial data in the cited studies are:
-
-| Model type | Examples mentioned in the context |
-|------------|-----------------------------------|
-| **Generative Adversarial Networks (GANs)** | CTGAN, hybrid sequential GANs (He & Kita), other GAN‑based approaches for stock‑market simulations |
-| **Variational Auto‑Encoders (VAEs)** | PayVAE (Dalmasso et al.) |
-| **Diffusion models** | Mentioned as a class of generative models used for financial data, though no specific example is given in the excerpt |
-
-**Most common model**  
-Across the literature, **GANs** are the most frequently used generative model for synthetic financial data. They are highlighted repeatedly as the primary tool for producing realistic price series, market behaviors, and other financial time‑series needed for simulation, strategy testing, and privacy‑preserving data sharing.","7, 12, 15, 19","7, 12",True,10.9
-20,Cross-section,How does the paper connect synthetic data to benchmarking finance LLMs?,"The paper links synthetic data to benchmarking finance‑focused LLMs by arguing that realistic, privacy‑preserving synthetic datasets can serve as a standard testbed for evaluating these models. By generating data with advanced techniques such as GANs, VAEs, and diffusion models, researchers can create large, high‑quality financial corpora that mimic real market behavior without exposing sensitive information. These synthetic corpora can then be used to:
-
-1. **Benchmark performance** – Provide a common, reproducible dataset against which different LLMs (general‑purpose vs. finance‑specific) can be compared on tasks like document interpretation, report generation, and forecasting.  
-2. **Validate against industry standards** – Ensure that the models meet accuracy, speed, and reliability metrics required in finance.  
-3. **Facilitate extensive testing** – Allow for extensive experimentation (e.g., stress‑testing, scenario analysis) that would be impractical or impossible with real data due to privacy or availability constraints.
-
-Thus, synthetic data is positioned as the key enabler for fair, scalable, and privacy‑respecting benchmarking of finance LLMs.","6, 7, 8, 11, 14","10, 14",True,1.2
-21,Cross-section,"Which two clusters are most similar in the dendrogram, and what topics are they?","I’m sorry, but the provided context does not specify which topics correspond to clusters 0 and 1, so I can’t identify the topics for those two most similar clusters.","5, 6, 7, 8, 16","5, 8",True,10.66
-22,Cross-section,Give examples of general-purpose vs. finance-specific LLMs and explain how they differ.,"**General‑purpose LLMs (e.g., GPT‑4, Gemini)**  
-* **Training data** – Millions of tokens from the public web, books, news articles, code, and other open‑source corpora.  
-* **Scope** – Designed to handle a wide variety of tasks (chat, summarization, translation, coding, etc.) without domain‑specific fine‑tuning.  
-* **Financial performance** – Can understand and generate financial text, but their accuracy on highly technical or regulated financial tasks (e.g., SEC filings, risk‑management rules) is limited by the lack of domain‑specific knowledge.  
-* **Typical use cases** – Quick explanations of market news, drafting general investment reports, or answering generic finance questions.
-
-**Finance‑specific LLMs (e.g., FinGPT, FinPT, BloombergGPT)**  
-* **Training data** – Curated financial corpora such as earnings call transcripts, regulatory filings, market data, proprietary research reports, and sometimes structured financial tables.  
-* **Scope** – Optimized for finance‑related tasks: parsing SEC 10‑K documents, generating earnings summaries, forecasting stock movements, or providing compliance‑aware advice.  
-* **Performance** – Generally outperform general‑purpose models on domain‑specific benchmarks because they have seen the terminology, formats, and nuances of financial texts during training.  
-* **Typical use cases** – Automated extraction of key metrics from filings, generation of regulatory‑compliant reports, or building financial‑analysis pipelines that require high precision.
-
-**Key differences**
-
-| Aspect | General‑purpose LLM | Finance‑specific LLM |
-|--------|---------------------|----------------------|
-| **Training corpus** | Broad, public data | Curated financial data |
-| **Domain knowledge** | Generic, limited finance depth | Deep, specialized finance knowledge |
-| **Accuracy on finance tasks** | Adequate for general queries | Superior on technical, regulated tasks |
-| **Adaptability** | Requires prompt engineering or fine‑tuning for finance | Often pre‑fine‑tuned, needs less engineering |
-| **Compliance awareness** | Minimal built‑in compliance checks | Often includes compliance‑aware modules |
-
-In short, general‑purpose LLMs are versatile but may lack depth in finance, whereas finance‑specific LLMs are tailored to the intricacies of financial language, data, and regulatory requirements, leading to better performance on specialized finance tasks.","1, 6, 8, 12","8, 9",True,11.28
-23,Cross-section,What does the paper say about LLMs in non-English languages?,"The paper notes that **LLMs do not yet perform as well in non‑English languages as they do in English**.  
-- In a study on personal financial decision‑making in Yoruba, the authors found that the LLM’s performance was “poor compared to their performance with English financial data,” underscoring the need for further improvement in low‑resource languages.  
-- The paper also highlights efforts to create language‑specific financial LLMs for other non‑English languages, such as a Japanese financial‑specific LLM (Hirano) and a bilingual Spanish‑English model (FinMA‑ES), indicating that tailored training can help bridge the gap.  
-
-In short, while progress is being made, the paper stresses that LLMs still lag behind in non‑English contexts and that more work is required to achieve comparable performance.","1, 6, 9, 10","9, 10",True,0.75
-24,Number/table,How many papers were classified as outliers (cluster -1)?,"I’m sorry, but the provided context does not include the specific number of papers that were classified as outliers (cluster -1).","5, 6, 7, 8",7,True,10.6
-25,Number/table,How many papers discuss LLMs in finance?,There are approximately **47 papers** that discuss LLMs in finance.,"1, 6, 8, 12","6, 7",True,0.53
-26,Number/table,How many datasets and tasks does Xie et al.'s open-source evaluation benchmark cover?,Xie et al.’s open‑source evaluation benchmark covers **35 datasets spanning 23 distinct financial tasks**.,"3, 10, 14, 17, 18",10,True,10.52
-27,Number/table,At about what dissimilarity level do clusters 0 and 1 merge?,Clusters 0 and 1 merge at a dissimilarity level of approximately **0.6**.,"5, 7, 8, 16",8,True,0.94
-28,Unanswerable,What accuracy did BloombergGPT score on FinanceBench?,"I’m sorry, but the provided context does not contain the accuracy score of BloombergGPT on FinanceBench.","7, 9, 10, 12",N/A,N/A,10.91
-29,Unanswerable,Which of the 90 reviewed papers was cited the most?,"I’m sorry, but the provided context does not contain information about which of the 90 reviewed papers was cited the most.","2, 3, 4, 7",N/A,N/A,1.78
-30,Unanswerable,What was IBM's total revenue in 2023?,"I’m sorry, but I don’t have that information.","2, 4, 6, 18, 19",N/A,N/A,10.62
+- **Training data** – General‑purpose models are trained on broad, heterogeneous internet text, whereas finance‑specific models are fine‑tuned or trained on large corpora of financial documents, market data, regulatory filings, and other domain‑specific content.  
+- **Application focus** – General‑purpose LLMs can be prompted for a wide range of tasks, including finance, but they are not optimized for financial nuances. Finance‑specific LLMs are designed to interpret complex financial documents, automate finance‑related workflows, and support decision‑making in investment, risk, and compliance contexts.  
+- **Performance expectations** – Finance‑specific models typically achieve higher accuracy and relevance on finance benchmarks and tasks (e.g., report generation, market trend explanation, forecasting) because they incorporate domain knowledge and terminology that general‑purpose models lack.","1, 6, 8, 12","8, 9",True,11.02
+23,Cross-section,What does the paper say about LLMs in non-English languages?,"The paper notes that LLMs perform poorly on non‑English financial data—e.g., a study on Yoruba showed much lower performance than on English—highlighting a need for improvement in low‑resource languages. It also reports that domain‑specific LLMs have been developed for other non‑English languages (Japanese, Spanish, etc.) and that these non‑English financial LLMs can provide more accurate and nuanced analyses of financial information in those languages.","1, 6, 9, 10","9, 10",True,0.72
+24,Number/table,How many papers were classified as outliers (cluster -1)?,I don't know.,"5, 6, 7, 8",7,True,10.98
+25,Number/table,How many papers discuss LLMs in finance?,47,"1, 6, 8, 12","6, 7",True,0.43
+26,Number/table,How many datasets and tasks does Xie et al.'s open-source evaluation benchmark cover?,35 datasets across 23 financial tasks.,"3, 10, 14, 17, 18",10,True,10.81
+27,Number/table,At about what dissimilarity level do clusters 0 and 1 merge?,Approximately 0.6.,"5, 7, 8, 16",8,True,10.92
+28,Unanswerable,What accuracy did BloombergGPT score on FinanceBench?,I don't know.,"7, 9, 10, 12",N/A,N/A,0.52
+29,Unanswerable,Which of the 90 reviewed papers was cited the most?,I don't know.,"2, 3, 4, 7",N/A,N/A,10.78
+30,Unanswerable,What was IBM's total revenue in 2023?,I don't know.,"2, 4, 6, 18, 19",N/A,N/A,0.72

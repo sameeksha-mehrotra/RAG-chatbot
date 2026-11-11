@@ -26,12 +26,12 @@ class HFInferenceLLM(LLM):
             "Content-Type": "application/json"
         }
         payload = {
-            "model": "meta-llama/llama-3.1-8b-instruct",
+            "model": "openai/gpt-oss-20b",
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": 512,
             "temperature": 0.3
         }
-        url = "https://router.huggingface.co/novita/v3/openai/chat/completions"
+        url = "https://api.groq.com/openai/v1/chat/completions"
         response = requests.post(url, headers=headers, json=payload)
         print("Status code:", response.status_code)
         if response.status_code != 200:
@@ -58,7 +58,7 @@ retriever = vectorstore.as_retriever(
 
 # LLM
 llm = HFInferenceLLM(
-    api_key=os.getenv("HUGGINGFACE_API_KEY"),
+    api_key=os.getenv("GROQ_API_KEY"),
     model_id="microsoft/Phi-3.5-mini-instruct"
 )
 

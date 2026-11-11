@@ -58,7 +58,7 @@ vectorstore = PineconeVectorStore(
 # Retriever
 retriever = vectorstore.as_retriever(
     search_type="similarity",
-    search_kwargs={"k": 3}
+    search_kwargs={"k": 6}
 )
 
 # LLM
@@ -69,8 +69,10 @@ llm = HFInferenceLLM(
 
 # Prompt
 prompt = PromptTemplate.from_template("""
-Use the following context to answer the question.
-If you don't know the answer, say so clearly.
+Answer the question using ONLY the context below. 
+The answer is often a specific number, name, or list, so read every passage 
+carefully before saying it is missing. Do not add facts, examples, or models that are 
+not in the context. If the context truly doesn't contain the answer, say "I don't know."
 
 Context: {context}
 

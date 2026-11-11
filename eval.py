@@ -17,8 +17,10 @@ from rag_chain import retriever, llm, format_docs
 
 # Same prompt as app.py, so the scores reflect the live app
 prompt = PromptTemplate.from_template("""
-You are a helpful assistant. Use the following context to answer the question.
-If you don't know the answer from the context, say so clearly.
+Answer the question using ONLY the context below. The answer is often a specific
+number, name, or list, so read every passage carefully before saying it is missing.
+Do not add facts, examples, or models that are not in the context.
+If the context truly doesn't contain the answer, say "I don't know."
 
 Context: {context}
 
